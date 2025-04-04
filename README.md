@@ -26,3 +26,20 @@ I had to understand the pattern of how each letter was shifted>once i saw that t
 muchiko filter just goes over the data in chunks of window size and takes average of each chunk, that way the sudden jumps or noise kinda gets balanced out. sanchiko filter works the same way but instead of average, it takes the middle value (median), which makes it better when there are extreme values that could mess up the average. hybrid was just using muchiko first then sanchiko on its output, so it gets both smoothness and stability.
 the tough part was handling the window properly…like making sure the window doesn’t go out of range of the data. also sometimes the output length gets smaller after filtering, so had to be careful while applying filters one after another. figuring out which filter worked best also took some trial and error with different data.
 
+## question 5:-
+so basically here we’re converting our rotation system (which uses roll, pitch, yaw — 3 values) into the Martian style, which is a 4-number system called quaternion. we learned that quaternions are better for 3D rotation because they avoid something called gimbal lock (which is when two axes align and you lose one degree of freedom). so we had to write a code that takes roll, pitch, yaw (in degrees), and gives the quaternion (w, x, y, z) which is what Martians use.
+formulas used:=
+cy = cos(yaw / 2)
+sy = sin(yaw / 2)
+cp = cos(pitch / 2)
+sp = sin(pitch / 2)
+cr = cos(roll / 2)
+sr = sin(roll / 2)
+w = cr * cp * cy + sr * sp * sy
+x = sr * cp * cy - cr * sp * sy
+y = cr * sp * cy + sr * cp * sy
+z = cr * cp * sy - sr * sp * cy
+(w,x,y,z) is the final result
+
+i understood what a gimbal lock was and why quaternion are used and tried understanding these formulas and how it was derived but dint understand a thing...but after getting to know these formulas it was just plug and play.
+
