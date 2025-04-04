@@ -30,15 +30,25 @@ the tough part was handling the window properly…like making sure the window do
 so basically here we’re converting our rotation system (which uses roll, pitch, yaw — 3 values) into the Martian style, which is a 4-number system called quaternion. we learned that quaternions are better for 3D rotation because they avoid something called gimbal lock (which is when two axes align and you lose one degree of freedom). so we had to write a code that takes roll, pitch, yaw (in degrees), and gives the quaternion (w, x, y, z) which is what Martians use.
 formulas used:-
 cy = cos(yaw / 2)
+
 sy = sin(yaw / 2)
+
 cp = cos(pitch / 2)
+
 sp = sin(pitch / 2)
+
 cr = cos(roll / 2)
+
 sr = sin(roll / 2)
+
 w = cr × cp × cy + sr × sp × sy
+
 x = sr × cp × cy − cr × sp × sy
+
 y = cr × sp × cy + sr × cp × sy
+
 z = cr × cp × sy − sr × sp × cy
+
 (w,x,y,z) is the final result
 
 i understood what a gimbal lock was and why quaternion are used and tried understanding these formulas and how it was derived but dint understand a thing...but after getting to know these formulas it was just plug and play.
