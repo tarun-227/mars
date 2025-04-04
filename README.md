@@ -6,6 +6,6 @@ but the installation process was long.I did using VMware.
 The syntax was kinda similar to c programming the question was also straight forward so implementing it was easy.
 Learnings were basic commands in ubuntu and basic syntaxs in bash.
 
-Medium dose:-
+# Medium dose:-
 
 
