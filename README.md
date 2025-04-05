@@ -60,7 +60,7 @@ I made a function that accepts a file and convert that into a matrix that contai
 ## question 2:-
 first i understood that the webcam behaves like a pinhole camera, so basically the closer an object is, the bigger it looks in the image. then i just needed to use a simple formula that connects real size, perceived size, and focal length to find distance.
 
-focal_length = (diagonal_resolution / 2) / tan(FOV / 2)  
+focal length = (diagonal_resolution / 2) / tan(FOV / 2)  
 
 i used the arrow's real width (17 cm), and calculated the focal length using the given FOV and resolution.
 once i got the perceived width from the bounding box of the arrow, i applied the pinhole camera formula:
